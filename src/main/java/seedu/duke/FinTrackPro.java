@@ -72,4 +72,22 @@ public class FinTrackPro {
         }
         in.close();
     }
+    private void handleCommand(String userInput) {
+        if (userInput.trim().isEmpty()) {
+            ui.printLine("Cannot process empty description!");
+            return;
+        }
+        String command = Parser.parseCommand(userInput);
+
+        switch (command) {
+        case "help":
+            ui.showHelpMessage();
+            break;
+        case "category":
+//            addCategory();
+            break;
+        default:
+            ui.printLine("You said: " + userInput);
+        }
+    }
 }
