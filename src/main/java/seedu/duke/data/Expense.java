@@ -35,4 +35,5 @@ public class Expense implements Category{
     public String toString() {
         return "$" + amount + " [" + category + "]";
     }
+
 }
